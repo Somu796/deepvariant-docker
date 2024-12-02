@@ -1,4 +1,11 @@
 
+# downloading the sample file 
+wget -O input/sample.bam https://storage.googleapis.com/deepvariant/quickstart-testdata/NA12878_S1.chr20.10_10p1mb.bam
+wget -O input/sample.bam.bai https://storage.googleapis.com/deepvariant/quickstart-testdata/NA12878_S1.chr20.10_10p1mb.bam.bai
+wget -O input/reference.fasta https://storage.googleapis.com/deepvariant/quickstart-testdata/ucsc.hg19.chr20.unittest.fasta
+
+
+# create the docker file
 nano Dockerfile
 
 # Write the docker
@@ -46,3 +53,8 @@ docker run -v $(pwd)/input:/input -v $(pwd)/output:/output deepvariant_image
 
 # check output
 ls output/
+
+
+# Download the data
+wget -nc ftp://ftp.sra.ebi.ac.uk/vol1/run/ERR176/ERR1766449/RM651.cleaned.dedup.bam
+wget -nc ftp://ftp.sra.ebi.ac.uk/vol1/run/ERR176/ERR1766449/RM651.cleaned.dedup.bam.bai
